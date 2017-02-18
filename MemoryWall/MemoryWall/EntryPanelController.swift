@@ -33,11 +33,21 @@ class EntryPanelController: NSViewController {
     }
     
     func createMenu()->NSMenu{
+        
+        Bundle.main.loadNibNamed("EntryPanelController", owner: self, topLevelObjects: nil);
+        
+        let viewItem=NSMenuItem();
+        viewItem.view=self.view;
+        
         let menu=NSMenu();
-        menu.addItem(withTitle: "entry1", action: nil, keyEquivalent: "");
-        menu.addItem(withTitle: "entry2", action: nil, keyEquivalent: "");
-        menu.addItem(withTitle: "entry3", action: nil, keyEquivalent: "");
+//        menu.addItem(withTitle: "entry1", action: nil, keyEquivalent: "");
+//        menu.addItem(withTitle: "entry2", action: nil, keyEquivalent: "");
+//        menu.addItem(withTitle: "entry3", action: nil, keyEquivalent: "");
+        menu.addItem(viewItem);
         return menu;
     }
     
+    @IBAction func saveGenericEntry(_ sender: Any) {
+        print("TODO saving generic entry");
+    }
 }
