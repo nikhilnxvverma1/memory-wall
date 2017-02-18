@@ -30,6 +30,9 @@ class EntryPanelController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         Bundle.main.loadNibNamed("EntryPanelController", owner: nil, topLevelObjects: nil);
+        let wall=Wall();
+        wall.setValue("first-wall", forKey: "name");
+        wall.setValue("not ready", forKey: "imageFilename");
     }
     
     func createMenu()->NSMenu{
@@ -40,9 +43,6 @@ class EntryPanelController: NSViewController {
         viewItem.view=self.view;
         
         let menu=NSMenu();
-//        menu.addItem(withTitle: "entry1", action: nil, keyEquivalent: "");
-//        menu.addItem(withTitle: "entry2", action: nil, keyEquivalent: "");
-//        menu.addItem(withTitle: "entry3", action: nil, keyEquivalent: "");
         menu.addItem(viewItem);
         return menu;
     }

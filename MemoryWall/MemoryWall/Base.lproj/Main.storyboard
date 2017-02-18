@@ -697,21 +697,32 @@
                                 </connections>
                             </containerView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="r6w-E7-kBy" userLabel="Wall operation">
-                                <rect key="frame" x="300" y="0.0" width="980" height="760"/>
+                                <rect key="frame" x="300" y="0.0" width="980" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bZ8-dY-EMo"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="BEg-Yd-Mj1" kind="embed" id="SbC-0c-BE4"/>
                                 </connections>
                             </containerView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="D35-BX-tSh" userLabel="Wall art">
+                                <rect key="frame" x="300" y="50" width="980" height="710"/>
+                                <connections>
+                                    <segue destination="APs-1n-TMc" kind="embed" id="oCz-aj-FnH"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="r6w-E7-kBy" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="0Kd-t0-aDH"/>
                             <constraint firstItem="QPU-6w-jI8" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="6PY-40-8L4"/>
+                            <constraint firstAttribute="trailing" secondItem="D35-BX-tSh" secondAttribute="trailing" id="FCJ-Fh-fNn"/>
                             <constraint firstItem="r6w-E7-kBy" firstAttribute="leading" secondItem="QPU-6w-jI8" secondAttribute="trailing" id="agC-mK-9Uv"/>
                             <constraint firstAttribute="bottom" secondItem="r6w-E7-kBy" secondAttribute="bottom" id="epJ-xv-hw4"/>
-                            <constraint firstItem="r6w-E7-kBy" firstAttribute="height" secondItem="ERx-hH-rdd" secondAttribute="height" id="imE-tL-bvs"/>
+                            <constraint firstItem="r6w-E7-kBy" firstAttribute="top" secondItem="D35-BX-tSh" secondAttribute="bottom" id="ikc-Tc-0iZ"/>
                             <constraint firstAttribute="trailing" secondItem="r6w-E7-kBy" secondAttribute="trailing" id="uG3-x3-OTt"/>
                             <constraint firstItem="QPU-6w-jI8" firstAttribute="centerY" secondItem="ERx-hH-rdd" secondAttribute="centerY" id="utb-9d-Am3"/>
                             <constraint firstItem="QPU-6w-jI8" firstAttribute="height" secondItem="ERx-hH-rdd" secondAttribute="height" id="vhg-N0-x5j"/>
+                            <constraint firstItem="D35-BX-tSh" firstAttribute="leading" secondItem="QPU-6w-jI8" secondAttribute="trailing" id="vqs-tW-jkg"/>
+                            <constraint firstItem="D35-BX-tSh" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="wET-iD-AhR"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -728,13 +739,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvV-bt-UMJ" userLabel="Vertical stacker">
-                                <rect key="frame" x="0.0" y="0.0" width="302" height="1280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="760"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZbM-go-Xcu" userLabel="Search bar">
-                                        <rect key="frame" x="80" y="1251" width="142" height="29"/>
+                                        <rect key="frame" x="0.0" y="731" width="300" height="29"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZB2-or-dcm">
-                                                <rect key="frame" x="8" y="4" width="96" height="22"/>
+                                                <rect key="frame" x="8" y="4" width="254" height="22"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Search walls" drawsBackground="YES" id="y57-ql-JYK">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -742,7 +753,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nSk-Pn-5rv">
-                                                <rect key="frame" x="112" y="5" width="22" height="19"/>
+                                                <rect key="frame" x="270" y="5" width="22" height="19"/>
                                                 <buttonCell key="cell" type="roundRect" title="+" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bTm-z6-koB">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="cellTitle"/>
@@ -765,13 +776,13 @@
                                         </customSpacing>
                                     </stackView>
                                     <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOL-0J-K23" userLabel="Wall list">
-                                        <rect key="frame" x="0.0" y="0.0" width="302" height="1243"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="723"/>
                                         <clipView key="contentView" drawsBackground="NO" id="fns-pO-Uil">
-                                            <rect key="frame" x="1" y="1" width="300" height="1241"/>
+                                            <rect key="frame" x="1" y="1" width="298" height="721"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <collectionView id="eLy-X3-XmZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="1241"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="298" height="721"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="g4p-gz-mg9">
                                                         <size key="itemSize" width="50" height="50"/>
@@ -782,11 +793,11 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </clipView>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="y7e-QD-uOk">
-                                            <rect key="frame" x="1" y="246" width="106" height="16"/>
+                                            <rect key="frame" x="1" y="706" width="298" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="e0w-Oi-7ng">
-                                            <rect key="frame" x="123" y="1" width="16" height="261"/>
+                                            <rect key="frame" x="283" y="1" width="16" height="721"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
@@ -821,7 +832,7 @@
             <objects>
                 <viewController id="BEg-Yd-Mj1" customClass="WallOperationController" customModule="MemoryWall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Lh7-hj-78e">
-                        <rect key="frame" x="0.0" y="0.0" width="880" height="760"/>
+                        <rect key="frame" x="0.0" y="0.0" width="880" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="lYF-4R-e44" customClass="MyBgView" customModule="MemoryWall" customModuleProvider="target">
@@ -859,42 +870,31 @@
                                     <constraint firstAttribute="height" constant="50" id="l3g-vs-3nr"/>
                                 </constraints>
                             </customView>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="hXN-OM-OqF" userLabel="WallArt">
-                                <rect key="frame" x="0.0" y="50" width="880" height="710"/>
-                                <connections>
-                                    <segue destination="B8F-x7-Y7X" kind="embed" id="7Dw-K5-VS0"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="lYF-4R-e44" firstAttribute="leading" secondItem="Lh7-hj-78e" secondAttribute="leading" id="3oL-eX-KXC"/>
-                            <constraint firstItem="hXN-OM-OqF" firstAttribute="top" secondItem="Lh7-hj-78e" secondAttribute="top" id="6Gn-kK-onI"/>
                             <constraint firstAttribute="bottom" secondItem="lYF-4R-e44" secondAttribute="bottom" id="9yu-hC-Kd0"/>
                             <constraint firstItem="lYF-4R-e44" firstAttribute="width" secondItem="Lh7-hj-78e" secondAttribute="width" id="MgB-Am-pvW"/>
-                            <constraint firstItem="hXN-OM-OqF" firstAttribute="leading" secondItem="Lh7-hj-78e" secondAttribute="leading" id="Z3C-Yt-06k"/>
                             <constraint firstAttribute="trailing" secondItem="lYF-4R-e44" secondAttribute="trailing" id="gEM-Va-zzk"/>
-                            <constraint firstItem="lYF-4R-e44" firstAttribute="top" secondItem="hXN-OM-OqF" secondAttribute="bottom" id="jRu-G8-6pU"/>
-                            <constraint firstItem="hXN-OM-OqF" firstAttribute="width" secondItem="Lh7-hj-78e" secondAttribute="width" id="qcG-By-MQl"/>
-                            <constraint firstAttribute="trailing" secondItem="hXN-OM-OqF" secondAttribute="trailing" id="tWZ-v3-NAJ"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="H2G-0a-c4J" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="251" y="2220"/>
+            <point key="canvasLocation" x="1304" y="1286"/>
         </scene>
         <!--Wall Art Controller-->
-        <scene sceneID="97H-Yb-Wou">
+        <scene sceneID="JbJ-bb-pyO">
             <objects>
-                <viewController id="B8F-x7-Y7X" customClass="WallArtController" customModule="MemoryWall" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="DHn-cv-6Hc" customClass="WallArtView" customModule="MemoryWall" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <viewController id="APs-1n-TMc" customClass="WallArtController" customModule="MemoryWall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="1LK-9C-8Uy" customClass="WallArtView" customModule="MemoryWall" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="673" height="401"/>
+                        <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="tWn-t7-ACB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="PLZ-d3-TMn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1129" y="2220"/>
+            <point key="canvasLocation" x="458" y="2050"/>
         </scene>
     </scenes>
 </document>

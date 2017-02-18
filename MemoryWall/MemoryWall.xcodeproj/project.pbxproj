@@ -14,6 +14,17 @@
 		C41545431E580A22001E7DFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41545411E580A22001E7DFB /* Main.storyboard */; };
 		C415454E1E580A22001E7DFB /* MemoryWallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415454D1E580A22001E7DFB /* MemoryWallTests.swift */; };
 		C41545591E580A22001E7DFB /* MemoryWallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41545581E580A22001E7DFB /* MemoryWallUITests.swift */; };
+		C45023181E58F4E100DC54B4 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45023171E58F4E100DC54B4 /* Workspace.swift */; };
+		C450231A1E58F4FB00DC54B4 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45023191E58F4FB00DC54B4 /* BackendService.swift */; };
+		C450231C1E58F54C00DC54B4 /* RenderingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450231B1E58F54C00DC54B4 /* RenderingStrategy.swift */; };
+		C4CEBEBC1E58F85A006CF121 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEBB1E58F85A006CF121 /* Command.swift */; };
+		C4CEBEBE1E58FAB1006CF121 /* ChangeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEBD1E58FAB1006CF121 /* ChangeAnchor.swift */; };
+		C4CEBEC01E58FB10006CF121 /* DeleteMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEBF1E58FB10006CF121 /* DeleteMemory.swift */; };
+		C4CEBEC21E58FB34006CF121 /* CreateWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEC11E58FB34006CF121 /* CreateWall.swift */; };
+		C4CEBEC41E58FB82006CF121 /* ChangeMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEC31E58FB82006CF121 /* ChangeMemory.swift */; };
+		C4CEBEC61E58FB95006CF121 /* DeleteWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEC51E58FB95006CF121 /* DeleteWall.swift */; };
+		C4CEBEC81E58FBC1006CF121 /* CreateMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEC71E58FBC1006CF121 /* CreateMemory.swift */; };
+		C4CEBECA1E58FBEA006CF121 /* ChangeWallName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEC91E58FBEA006CF121 /* ChangeWallName.swift */; };
 		C4F74BFD1E588E4400028075 /* WorkspaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F74BFC1E588E4400028075 /* WorkspaceController.swift */; };
 		C4F74BFF1E58911600028075 /* WallListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F74BFE1E58911600028075 /* WallListController.swift */; };
 		C4F74C021E58971300028075 /* MyBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F74C011E58971300028075 /* MyBgView.swift */; };
@@ -55,6 +66,17 @@
 		C41545541E580A22001E7DFB /* MemoryWallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoryWallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41545581E580A22001E7DFB /* MemoryWallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryWallUITests.swift; sourceTree = "<group>"; };
 		C415455A1E580A22001E7DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C45023171E58F4E100DC54B4 /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
+		C45023191E58F4FB00DC54B4 /* BackendService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
+		C450231B1E58F54C00DC54B4 /* RenderingStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderingStrategy.swift; sourceTree = "<group>"; };
+		C4CEBEBB1E58F85A006CF121 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		C4CEBEBD1E58FAB1006CF121 /* ChangeAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeAnchor.swift; sourceTree = "<group>"; };
+		C4CEBEBF1E58FB10006CF121 /* DeleteMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteMemory.swift; sourceTree = "<group>"; };
+		C4CEBEC11E58FB34006CF121 /* CreateWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWall.swift; sourceTree = "<group>"; };
+		C4CEBEC31E58FB82006CF121 /* ChangeMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeMemory.swift; sourceTree = "<group>"; };
+		C4CEBEC51E58FB95006CF121 /* DeleteWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteWall.swift; sourceTree = "<group>"; };
+		C4CEBEC71E58FBC1006CF121 /* CreateMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMemory.swift; sourceTree = "<group>"; };
+		C4CEBEC91E58FBEA006CF121 /* ChangeWallName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeWallName.swift; sourceTree = "<group>"; };
 		C4F74BFC1E588E4400028075 /* WorkspaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceController.swift; sourceTree = "<group>"; };
 		C4F74BFE1E58911600028075 /* WallListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallListController.swift; sourceTree = "<group>"; };
 		C4F74C011E58971300028075 /* MyBgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBgView.swift; sourceTree = "<group>"; };
@@ -113,6 +135,7 @@
 		C41545351E580A22001E7DFB /* MemoryWall */ = {
 			isa = PBXGroup;
 			children = (
+				C45023161E58F4C600DC54B4 /* Editor */,
 				C4F74C001E5896DF00028075 /* Views */,
 				C4F74BFB1E588E1800028075 /* Controllers */,
 				C41545361E580A22001E7DFB /* AppDelegate.swift */,
@@ -141,6 +164,32 @@
 				C415455A1E580A22001E7DFB /* Info.plist */,
 			);
 			path = MemoryWallUITests;
+			sourceTree = "<group>";
+		};
+		C45023161E58F4C600DC54B4 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				C4CEBEBA1E58F84C006CF121 /* Commands */,
+				C45023171E58F4E100DC54B4 /* Workspace.swift */,
+				C45023191E58F4FB00DC54B4 /* BackendService.swift */,
+				C450231B1E58F54C00DC54B4 /* RenderingStrategy.swift */,
+			);
+			name = Editor;
+			sourceTree = "<group>";
+		};
+		C4CEBEBA1E58F84C006CF121 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				C4CEBEBB1E58F85A006CF121 /* Command.swift */,
+				C4CEBEC31E58FB82006CF121 /* ChangeMemory.swift */,
+				C4CEBEC51E58FB95006CF121 /* DeleteWall.swift */,
+				C4CEBEBD1E58FAB1006CF121 /* ChangeAnchor.swift */,
+				C4CEBEC71E58FBC1006CF121 /* CreateMemory.swift */,
+				C4CEBEBF1E58FB10006CF121 /* DeleteMemory.swift */,
+				C4CEBEC11E58FB34006CF121 /* CreateWall.swift */,
+				C4CEBEC91E58FBEA006CF121 /* ChangeWallName.swift */,
+			);
+			name = Commands;
 			sourceTree = "<group>";
 		};
 		C4F74BFB1E588E1800028075 /* Controllers */ = {
@@ -300,14 +349,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				C415453E1E580A22001E7DFB /* Document.xcdatamodeld in Sources */,
+				C450231C1E58F54C00DC54B4 /* RenderingStrategy.swift in Sources */,
 				C4F74C0B1E58ABB800028075 /* EntryPanelController.swift in Sources */,
 				C4F74BFD1E588E4400028075 /* WorkspaceController.swift in Sources */,
 				C4F74C081E58A77500028075 /* WallArtController.swift in Sources */,
+				C4CEBECA1E58FBEA006CF121 /* ChangeWallName.swift in Sources */,
+				C450231A1E58F4FB00DC54B4 /* BackendService.swift in Sources */,
+				C4CEBEC81E58FBC1006CF121 /* CreateMemory.swift in Sources */,
+				C4CEBEBE1E58FAB1006CF121 /* ChangeAnchor.swift in Sources */,
 				C4F74C021E58971300028075 /* MyBgView.swift in Sources */,
 				C4F74C061E58A6BE00028075 /* WallArtView.swift in Sources */,
+				C4CEBEC01E58FB10006CF121 /* DeleteMemory.swift in Sources */,
 				C4F74BFF1E58911600028075 /* WallListController.swift in Sources */,
 				C4F74C041E58A20A00028075 /* WallOperationController.swift in Sources */,
+				C4CEBEC21E58FB34006CF121 /* CreateWall.swift in Sources */,
 				C41545371E580A22001E7DFB /* AppDelegate.swift in Sources */,
+				C4CEBEC61E58FB95006CF121 /* DeleteWall.swift in Sources */,
+				C4CEBEBC1E58F85A006CF121 /* Command.swift in Sources */,
+				C45023181E58F4E100DC54B4 /* Workspace.swift in Sources */,
+				C4CEBEC41E58FB82006CF121 /* ChangeMemory.swift in Sources */,
 				C415453B1E580A22001E7DFB /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
