@@ -10,9 +10,14 @@ import Cocoa
 
 class WallOperationController: NSViewController {
 
+    var workspace:Workspace!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
     
+    func receiveWorkspace(_ workspace:Workspace){
+        self.workspace=workspace;
+    }
 }

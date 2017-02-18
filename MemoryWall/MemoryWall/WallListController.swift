@@ -10,10 +10,16 @@ import Cocoa
 
 class WallListController: NSViewController {
 
+    var workspace:Workspace!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         print("wall list controller created");
+    }
+    
+    func receiveWorkspace(_ workspace:Workspace){
+        self.workspace=workspace;
     }
     
 }
