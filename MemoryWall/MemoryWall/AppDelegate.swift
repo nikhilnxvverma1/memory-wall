@@ -22,7 +22,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         statusItem.title="Memory";
-        
         statusItem.menu=self.entryPanelController.entryMenu;
     }
 

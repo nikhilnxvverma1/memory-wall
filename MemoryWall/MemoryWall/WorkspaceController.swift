@@ -15,7 +15,6 @@ class WorkspaceController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("Workspace controller loaded in");
         for childController in childViewControllers{
             childController.perform(Selector(("receiveWorkspace:")), with: workspace);
         }
@@ -26,6 +25,10 @@ class WorkspaceController: NSViewController {
         didSet {
             // Update the view, if already loaded.
         }
+    }
+    
+    func recieveManagedObjectContext(_ managedObjectContext:NSManagedObjectContext){
+        workspace.managedObjectContext=managedObjectContext;
     }
 
 }

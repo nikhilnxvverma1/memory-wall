@@ -9,5 +9,5 @@
 import Cocoa
 
 class BackendService: NSObject {
-
+    var managedObjectContext:NSManagedObjectContext!;
 }

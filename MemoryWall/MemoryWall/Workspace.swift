@@ -14,6 +14,19 @@ class Workspace: NSObject {
     var history:[Command];
     var future:[Command];
     
+    private var _managedObjectContext:NSManagedObjectContext!
+    var managedObjectContext:NSManagedObjectContext{
+        
+        get{
+            return _managedObjectContext;
+        }
+        
+        set(moc){
+            _managedObjectContext=moc;
+            backend.managedObjectContext=moc;
+        }
+    }
+    
     override init(){
         backend=BackendService();
         renderer=DumbRenderingStrategy();

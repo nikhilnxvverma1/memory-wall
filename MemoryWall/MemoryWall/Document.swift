@@ -24,6 +24,9 @@ class Document: NSPersistentDocument {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let windowController = storyboard.instantiateController(withIdentifier: "Document Window Controller") as! NSWindowController
         self.addWindowController(windowController)
+        
+        //inject the managedObjectContext into the child controllers
+        windowController.contentViewController?.perform(Selector(("recieveManagedObjectContext:")), with: self.managedObjectContext);
     }
 
 }
