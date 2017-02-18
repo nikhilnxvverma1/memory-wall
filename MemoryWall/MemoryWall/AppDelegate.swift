@@ -20,19 +20,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         statusItem.title="MyItem";
-        updateStatusItem(statusItem: statusItem);
+        let entryPanelController=EntryPanelController();
+        statusItem.menu=entryPanelController.entryMenu;
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
-    }
-    
-    func updateStatusItem(statusItem:NSStatusItem){
-        let menu=NSMenu();
-        menu.addItem(withTitle: "first", action: nil, keyEquivalent: "");
-        menu.addItem(withTitle: "second", action: nil, keyEquivalent: "");
-        menu.addItem(withTitle: "third", action: nil, keyEquivalent: "");
-        statusItem.menu=menu;
     }
     
 }
