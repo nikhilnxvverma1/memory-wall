@@ -15,6 +15,12 @@
 		C41545431E580A22001E7DFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41545411E580A22001E7DFB /* Main.storyboard */; };
 		C415454E1E580A22001E7DFB /* MemoryWallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415454D1E580A22001E7DFB /* MemoryWallTests.swift */; };
 		C41545591E580A22001E7DFB /* MemoryWallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41545581E580A22001E7DFB /* MemoryWallUITests.swift */; };
+		C4F74BFD1E588E4400028075 /* WorkspaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F74BFC1E588E4400028075 /* WorkspaceController.swift */; };
+		C4F74BFF1E58911600028075 /* WallListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F74BFE1E58911600028075 /* WallListController.swift */; };
+		C4F74C021E58971300028075 /* MyBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F74C011E58971300028075 /* MyBgView.swift */; };
+		C4F74C041E58A20A00028075 /* WallOperationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F74C031E58A20A00028075 /* WallOperationController.swift */; };
+		C4F74C061E58A6BE00028075 /* WallArtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F74C051E58A6BE00028075 /* WallArtView.swift */; };
+		C4F74C081E58A77500028075 /* WallArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F74C071E58A77500028075 /* WallArtController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		C41545541E580A22001E7DFB /* MemoryWallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoryWallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41545581E580A22001E7DFB /* MemoryWallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryWallUITests.swift; sourceTree = "<group>"; };
 		C415455A1E580A22001E7DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4F74BFC1E588E4400028075 /* WorkspaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceController.swift; sourceTree = "<group>"; };
+		C4F74BFE1E58911600028075 /* WallListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallListController.swift; sourceTree = "<group>"; };
+		C4F74C011E58971300028075 /* MyBgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBgView.swift; sourceTree = "<group>"; };
+		C4F74C031E58A20A00028075 /* WallOperationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallOperationController.swift; sourceTree = "<group>"; };
+		C4F74C051E58A6BE00028075 /* WallArtView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallArtView.swift; sourceTree = "<group>"; };
+		C4F74C071E58A77500028075 /* WallArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallArtController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,8 @@
 		C41545351E580A22001E7DFB /* MemoryWall */ = {
 			isa = PBXGroup;
 			children = (
+				C4F74C001E5896DF00028075 /* Views */,
+				C4F74BFB1E588E1800028075 /* Controllers */,
 				C41545361E580A22001E7DFB /* AppDelegate.swift */,
 				C41545381E580A22001E7DFB /* ViewController.swift */,
 				C415453A1E580A22001E7DFB /* Document.swift */,
@@ -126,6 +140,26 @@
 				C415455A1E580A22001E7DFB /* Info.plist */,
 			);
 			path = MemoryWallUITests;
+			sourceTree = "<group>";
+		};
+		C4F74BFB1E588E1800028075 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4F74BFC1E588E4400028075 /* WorkspaceController.swift */,
+				C4F74BFE1E58911600028075 /* WallListController.swift */,
+				C4F74C031E58A20A00028075 /* WallOperationController.swift */,
+				C4F74C071E58A77500028075 /* WallArtController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C4F74C001E5896DF00028075 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4F74C011E58971300028075 /* MyBgView.swift */,
+				C4F74C051E58A6BE00028075 /* WallArtView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +297,12 @@
 			files = (
 				C415453E1E580A22001E7DFB /* Document.xcdatamodeld in Sources */,
 				C41545391E580A22001E7DFB /* ViewController.swift in Sources */,
+				C4F74BFD1E588E4400028075 /* WorkspaceController.swift in Sources */,
+				C4F74C081E58A77500028075 /* WallArtController.swift in Sources */,
+				C4F74C021E58971300028075 /* MyBgView.swift in Sources */,
+				C4F74C061E58A6BE00028075 /* WallArtView.swift in Sources */,
+				C4F74BFF1E58911600028075 /* WallListController.swift in Sources */,
+				C4F74C041E58A20A00028075 /* WallOperationController.swift in Sources */,
 				C41545371E580A22001E7DFB /* AppDelegate.swift in Sources */,
 				C415453B1E580A22001E7DFB /* Document.swift in Sources */,
 			);
@@ -504,6 +544,7 @@
 				C415455F1E580A22001E7DFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C41545601E580A22001E7DFB /* Build configuration list for PBXNativeTarget "MemoryWallTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +553,7 @@
 				C41545621E580A22001E7DFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C41545631E580A22001E7DFB /* Build configuration list for PBXNativeTarget "MemoryWallUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +562,7 @@
 				C41545651E580A22001E7DFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

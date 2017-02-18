@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -653,10 +656,10 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MemoryWall" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="82" y="-298"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -665,7 +668,7 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Ckk-yw-fiv">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="1280" height="760"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -676,32 +679,222 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Workspace Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="5gI-5U-AMq" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5gI-5U-AMq" customClass="WorkspaceController" customModule="MemoryWall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="ERx-hH-rdd">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1280" height="760"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="246" translatesAutoresizingMaskIntoConstraints="NO" id="TyV-c9-G0C">
-                                <rect key="frame" x="115" y="124" width="250" height="22"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Your document contents here" id="Cc7-nU-5Mv">
-                                    <font key="font" metaFont="system" size="18"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="QPU-6w-jI8" userLabel="Wall list">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="760"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="az8-WT-cCy"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="G6V-6p-9lc" kind="embed" id="et8-4Q-plD"/>
+                                </connections>
+                            </containerView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="r6w-E7-kBy" userLabel="Wall operation">
+                                <rect key="frame" x="300" y="0.0" width="980" height="760"/>
+                                <connections>
+                                    <segue destination="BEg-Yd-Mj1" kind="embed" id="SbC-0c-BE4"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="TyV-c9-G0C" secondAttribute="centerY" id="Rxv-Yd-F43"/>
-                            <constraint firstAttribute="centerX" secondItem="TyV-c9-G0C" secondAttribute="centerX" id="Zn4-Y4-lbg"/>
+                            <constraint firstItem="r6w-E7-kBy" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="0Kd-t0-aDH"/>
+                            <constraint firstItem="QPU-6w-jI8" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="6PY-40-8L4"/>
+                            <constraint firstItem="r6w-E7-kBy" firstAttribute="leading" secondItem="QPU-6w-jI8" secondAttribute="trailing" id="agC-mK-9Uv"/>
+                            <constraint firstAttribute="bottom" secondItem="r6w-E7-kBy" secondAttribute="bottom" id="epJ-xv-hw4"/>
+                            <constraint firstItem="r6w-E7-kBy" firstAttribute="height" secondItem="ERx-hH-rdd" secondAttribute="height" id="imE-tL-bvs"/>
+                            <constraint firstAttribute="trailing" secondItem="r6w-E7-kBy" secondAttribute="trailing" id="uG3-x3-OTt"/>
+                            <constraint firstItem="QPU-6w-jI8" firstAttribute="centerY" secondItem="ERx-hH-rdd" secondAttribute="centerY" id="utb-9d-Am3"/>
+                            <constraint firstItem="QPU-6w-jI8" firstAttribute="height" secondItem="ERx-hH-rdd" secondAttribute="height" id="vhg-N0-x5j"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="1286"/>
+        </scene>
+        <!--Wall List Controller-->
+        <scene sceneID="SLr-iG-m4a">
+            <objects>
+                <viewController id="G6V-6p-9lc" customClass="WallListController" customModule="MemoryWall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="YeE-oh-Bbd">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="760"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvV-bt-UMJ" userLabel="Vertical stacker">
+                                <rect key="frame" x="0.0" y="0.0" width="302" height="1280"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZbM-go-Xcu" userLabel="Search bar">
+                                        <rect key="frame" x="80" y="1251" width="142" height="29"/>
+                                        <subviews>
+                                            <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZB2-or-dcm">
+                                                <rect key="frame" x="8" y="4" width="96" height="22"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Search walls" drawsBackground="YES" id="y57-ql-JYK">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nSk-Pn-5rv">
+                                                <rect key="frame" x="112" y="5" width="22" height="19"/>
+                                                <buttonCell key="cell" type="roundRect" title="+" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bTm-z6-koB">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="cellTitle"/>
+                                                </buttonCell>
+                                            </button>
+                                        </subviews>
+                                        <edgeInsets key="edgeInsets" left="8" right="8" top="8" bottom="8"/>
+                                        <constraints>
+                                            <constraint firstItem="ZB2-or-dcm" firstAttribute="top" secondItem="ZbM-go-Xcu" secondAttribute="top" constant="3" id="FPr-Wt-Z2Q"/>
+                                            <constraint firstItem="ZB2-or-dcm" firstAttribute="centerY" secondItem="ZbM-go-Xcu" secondAttribute="centerY" id="VDN-qk-WDs"/>
+                                            <constraint firstItem="ZB2-or-dcm" firstAttribute="centerY" secondItem="nSk-Pn-5rv" secondAttribute="centerY" id="Vya-Re-P5h"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOL-0J-K23" userLabel="Wall list">
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="1243"/>
+                                        <clipView key="contentView" drawsBackground="NO" id="fns-pO-Uil">
+                                            <rect key="frame" x="1" y="1" width="300" height="1241"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <collectionView id="eLy-X3-XmZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="1241"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="g4p-gz-mg9">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                    </collectionViewFlowLayout>
+                                                    <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </collectionView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="y7e-QD-uOk">
+                                            <rect key="frame" x="1" y="246" width="106" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="e0w-Oi-7ng">
+                                            <rect key="frame" x="123" y="1" width="16" height="261"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pOL-0J-K23" firstAttribute="leading" secondItem="YvV-bt-UMJ" secondAttribute="leading" id="OFN-uL-0NS"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="YvV-bt-UMJ" firstAttribute="centerX" secondItem="YeE-oh-Bbd" secondAttribute="centerX" id="7V3-xG-xXO"/>
+                            <constraint firstItem="YvV-bt-UMJ" firstAttribute="centerY" secondItem="YeE-oh-Bbd" secondAttribute="centerY" id="BvJ-fG-C5Z"/>
+                            <constraint firstItem="YvV-bt-UMJ" firstAttribute="width" secondItem="YeE-oh-Bbd" secondAttribute="width" id="D96-IC-3gY"/>
+                            <constraint firstItem="YvV-bt-UMJ" firstAttribute="height" secondItem="YeE-oh-Bbd" secondAttribute="height" id="uQt-Lg-9NN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="IkR-22-qNx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-452" y="2220"/>
+        </scene>
+        <!--Wall Operation Controller-->
+        <scene sceneID="7EC-RL-LZr">
+            <objects>
+                <viewController id="BEg-Yd-Mj1" customClass="WallOperationController" customModule="MemoryWall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Lh7-hj-78e">
+                        <rect key="frame" x="0.0" y="0.0" width="880" height="760"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="lYF-4R-e44" customClass="MyBgView" customModule="MemoryWall" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="880" height="50"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g9C-SK-uSL">
+                                        <rect key="frame" x="708" y="7" width="154" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Apply as wallpaper" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="9b5-TZ-cBa">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="chu-tW-Ecz">
+                                        <rect key="frame" x="14" y="7" width="80" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t4R-Gf-onN">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CVR-Tf-DTQ">
+                                        <rect key="frame" x="590" y="7" width="118" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Add Memory" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F26-so-A98">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CVR-Tf-DTQ" firstAttribute="centerY" secondItem="lYF-4R-e44" secondAttribute="centerY" id="6dL-Xw-0zj"/>
+                                    <constraint firstAttribute="trailing" secondItem="g9C-SK-uSL" secondAttribute="trailing" constant="24" id="9aE-kP-Y3z"/>
+                                    <constraint firstItem="chu-tW-Ecz" firstAttribute="centerY" secondItem="lYF-4R-e44" secondAttribute="centerY" id="OH3-f6-p3Z"/>
+                                    <constraint firstItem="chu-tW-Ecz" firstAttribute="leading" secondItem="lYF-4R-e44" secondAttribute="leading" constant="20" id="RSE-wq-PBw"/>
+                                    <constraint firstItem="g9C-SK-uSL" firstAttribute="leading" secondItem="CVR-Tf-DTQ" secondAttribute="trailing" constant="12" id="dbK-Be-TZb"/>
+                                    <constraint firstItem="g9C-SK-uSL" firstAttribute="centerY" secondItem="lYF-4R-e44" secondAttribute="centerY" id="fgb-YK-eja"/>
+                                    <constraint firstAttribute="height" constant="50" id="l3g-vs-3nr"/>
+                                </constraints>
+                            </customView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="hXN-OM-OqF" userLabel="WallArt">
+                                <rect key="frame" x="0.0" y="50" width="880" height="710"/>
+                                <connections>
+                                    <segue destination="B8F-x7-Y7X" kind="embed" id="7Dw-K5-VS0"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="lYF-4R-e44" firstAttribute="leading" secondItem="Lh7-hj-78e" secondAttribute="leading" id="3oL-eX-KXC"/>
+                            <constraint firstItem="hXN-OM-OqF" firstAttribute="top" secondItem="Lh7-hj-78e" secondAttribute="top" id="6Gn-kK-onI"/>
+                            <constraint firstAttribute="bottom" secondItem="lYF-4R-e44" secondAttribute="bottom" id="9yu-hC-Kd0"/>
+                            <constraint firstItem="lYF-4R-e44" firstAttribute="width" secondItem="Lh7-hj-78e" secondAttribute="width" id="MgB-Am-pvW"/>
+                            <constraint firstItem="hXN-OM-OqF" firstAttribute="leading" secondItem="Lh7-hj-78e" secondAttribute="leading" id="Z3C-Yt-06k"/>
+                            <constraint firstAttribute="trailing" secondItem="lYF-4R-e44" secondAttribute="trailing" id="gEM-Va-zzk"/>
+                            <constraint firstItem="lYF-4R-e44" firstAttribute="top" secondItem="hXN-OM-OqF" secondAttribute="bottom" id="jRu-G8-6pU"/>
+                            <constraint firstItem="hXN-OM-OqF" firstAttribute="width" secondItem="Lh7-hj-78e" secondAttribute="width" id="qcG-By-MQl"/>
+                            <constraint firstAttribute="trailing" secondItem="hXN-OM-OqF" secondAttribute="trailing" id="tWZ-v3-NAJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="H2G-0a-c4J" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="251" y="2220"/>
+        </scene>
+        <!--Wall Art Controller-->
+        <scene sceneID="97H-Yb-Wou">
+            <objects>
+                <viewController id="B8F-x7-Y7X" customClass="WallArtController" customModule="MemoryWall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="DHn-cv-6Hc" customClass="WallArtView" customModule="MemoryWall" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <customObject id="tWn-t7-ACB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1129" y="2220"/>
         </scene>
     </scenes>
 </document>
