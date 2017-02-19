@@ -9,44 +9,46 @@
 import Cocoa
 
 class Workspace: NSObject {
-    var backend:BackendService;
-    var renderer:RenderingStrategy;
-    var history:[Command];
-    var future:[Command];
+    var backend:BackendService
+    var renderer:RenderingStrategy
+    var history:[Command]
+    var future:[Command]
+    var selectedWall:Wall!
+    var wallList:[Wall]!
     
     private var _managedObjectContext:NSManagedObjectContext!
     var managedObjectContext:NSManagedObjectContext{
         
         get{
-            return _managedObjectContext;
+            return _managedObjectContext
         }
         
         set(moc){
-            _managedObjectContext=moc;
-            backend.managedObjectContext=moc;
+            _managedObjectContext=moc
+            backend.managedObjectContext=moc
         }
     }
     
     override init(){
-        backend=BackendService();
-        renderer=DumbRenderingStrategy();
-        history=[Command]();
-        future=[Command]();
+        backend=BackendService()
+        renderer=DumbRenderingStrategy()
+        history=[Command]()
+        future=[Command]()
     }
     
     func comit(command:Command,execute:Bool=false){
         if(execute){
-            command.execute();
+            command.execute()
         }
-        future.removeAll();
-        history.append(command);
+        future.removeAll()
+        history.append(command)
     }
     
     func undo(){
         if(!history.isEmpty){
-            let lastCommand=history.removeLast();
-            lastCommand.unExecute();
-            future.append(lastCommand);
+            let lastCommand=history.removeLast()
+            lastCommand.unExecute()
+            future.append(lastCommand)
         }else{
             print("Undo stack is empty")
         }
@@ -54,12 +56,17 @@ class Workspace: NSObject {
     
     func redo(){
         if(!future.isEmpty){
-            let undidCommand=future.removeLast();
-            undidCommand.execute();
-            history.append(undidCommand);
+            let undidCommand=future.removeLast()
+            undidCommand.execute()
+            history.append(undidCommand)
         }else{
-            print("Redo stack is empty");
+            print("Redo stack is empty")
         }
+    }
+    
+    private func retrieveDataModel(){
+        //store all walls in a list
+        
     }
     
 }

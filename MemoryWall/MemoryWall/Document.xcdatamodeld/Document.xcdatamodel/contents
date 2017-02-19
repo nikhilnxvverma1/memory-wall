@@ -19,10 +19,11 @@
         <attribute name="renderingStrategy" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="startX" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="startY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="memories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memory" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Wall" positionX="-63" positionY="-18" width="128" height="223"/>
         <element name="Memory" positionX="-351" positionY="-27" width="128" height="120"/>
+        <element name="Wall" positionX="-63" positionY="-18" width="128" height="240"/>
     </elements>
 </model>

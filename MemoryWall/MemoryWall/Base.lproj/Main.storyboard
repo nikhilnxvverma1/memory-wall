@@ -730,6 +730,19 @@
             </objects>
             <point key="canvasLocation" x="75" y="1286"/>
         </scene>
+        <!--Collection View Item-->
+        <scene sceneID="1RI-Le-YiY">
+            <objects>
+                <collectionViewItem storyboardIdentifier="wallCell" id="y6v-NE-bog" sceneMemberID="viewController">
+                    <view key="view" id="835-pR-7Ha">
+                        <rect key="frame" x="0.0" y="0.0" width="174" height="134"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </collectionViewItem>
+                <customObject id="PmV-YD-Lja" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-784" y="2032"/>
+        </scene>
         <!--Wall List Controller-->
         <scene sceneID="SLr-iG-m4a">
             <objects>
@@ -758,6 +771,9 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="cellTitle"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="createWall:" target="G6V-6p-9lc" id="42N-2G-VOu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <edgeInsets key="edgeInsets" left="8" right="8" top="8" bottom="8"/>
@@ -775,7 +791,7 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOL-0J-K23" userLabel="Wall list">
+                                    <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOL-0J-K23" userLabel="Wall list">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="723"/>
                                         <clipView key="contentView" drawsBackground="NO" id="fns-pO-Uil">
                                             <rect key="frame" x="1" y="1" width="298" height="721"/>
@@ -785,15 +801,15 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="298" height="721"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="g4p-gz-mg9">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="itemSize" width="150" height="100"/>
                                                     </collectionViewFlowLayout>
-                                                    <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="primaryBackgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                                 </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </clipView>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="y7e-QD-uOk">
-                                            <rect key="frame" x="1" y="706" width="298" height="16"/>
+                                            <rect key="frame" x="-100" y="-100" width="298" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="e0w-Oi-7ng">
@@ -822,6 +838,9 @@
                             <constraint firstItem="YvV-bt-UMJ" firstAttribute="height" secondItem="YeE-oh-Bbd" secondAttribute="height" id="uQt-Lg-9NN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="wallListCollection" destination="eLy-X3-XmZ" id="Q62-FH-4Ty"/>
+                    </connections>
                 </viewController>
                 <customObject id="IkR-22-qNx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
