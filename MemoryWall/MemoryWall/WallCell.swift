@@ -16,8 +16,8 @@ class WallCell: NSCollectionViewItem {
         get{
             return _wall;
         }
-        set(value){
-            _wall=value;
+        set{
+            _wall=newValue;
             updateView()
         }
     }
@@ -29,7 +29,7 @@ class WallCell: NSCollectionViewItem {
     
     private func updateView(){
         let name=view.viewWithTag(1) as! NSTextField
-//        name.stringValue=wall.name!
+        name.stringValue=wall.name!
         view.needsDisplay=true
     }
 }

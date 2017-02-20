@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Memory" representedClassName="Memory" syncable="YES" codeGenerationType="class">
+    <entity name="MemoryModel" representedClassName="MemoryModel" syncable="YES" codeGenerationType="class">
         <attribute name="artwork" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="Wall" representedClassName="Wall" syncable="YES" codeGenerationType="class">
+    <entity name="WallModel" representedClassName="WallModel" syncable="YES" codeGenerationType="class">
         <attribute name="anchorX" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="anchorY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="backgroundColorHashCode" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,10 +21,10 @@
         <attribute name="startX" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="startY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="thumbnail" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="memories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memory" syncable="YES"/>
+        <relationship name="memories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MemoryModel" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Memory" positionX="-351" positionY="-27" width="128" height="120"/>
-        <element name="Wall" positionX="-63" positionY="-18" width="128" height="255"/>
+        <element name="MemoryModel" positionX="-351" positionY="-27" width="128" height="120"/>
+        <element name="WallModel" positionX="-63" positionY="-18" width="128" height="255"/>
     </elements>
 </model>

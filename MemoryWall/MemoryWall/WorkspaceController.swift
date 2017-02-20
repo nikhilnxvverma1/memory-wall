@@ -17,7 +17,7 @@ class WorkspaceController: NSViewController {
         // Do any additional setup after loading the view.
         workspace=Workspace()
         for childController in childViewControllers{
-            childController.perform(Selector(("receiveWorkspace:")), with: workspace);
+            childController.perform(Selector(("receiveWorkspace:")), with: workspace)
         }
         
     }
@@ -29,7 +29,7 @@ class WorkspaceController: NSViewController {
     }
     
     func recieveManagedObjectContext(_ managedObjectContext:NSManagedObjectContext){
-        workspace.managedObjectContext=managedObjectContext;
+        workspace.managedObjectContext=managedObjectContext
     }
 
 }

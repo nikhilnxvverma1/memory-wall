@@ -13,25 +13,21 @@ class CreateWall: Command {
     var workspace:Workspace
     var wall:Wall
     var wallListCollection:NSCollectionView
-    private var afterFirstInsert=false;
     
     init(workspace:Workspace,name:String,wallListCollection:NSCollectionView){
         self.workspace=workspace;
-        wall=workspace.backend.createNewWall(name: name)
+        wall=Wall()
         self.wallListCollection=wallListCollection
-        afterFirstInsert=false
     }
     
     func execute(){
-        
-        if afterFirstInsert{
-            workspace.backend.insertEntityInContext(unmanagedObject: wall)
-        }
-        afterFirstInsert=true
+		wall.persist(workspace.managedObjectContext)
+		workspace.wallList.append(wall)
     }
     
     func unExecute(){
-        workspace.backend.removeEntityFromContext(managedObject: wall)
+		wall.unpersist(workspace.managedObjectContext)
+		workspace.wallList.remove(at: workspace.wallList.index(of: wall)!)
     }
     
     func getName()->String{

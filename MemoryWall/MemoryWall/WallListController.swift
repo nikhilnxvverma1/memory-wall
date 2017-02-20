@@ -48,7 +48,6 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
     func collectionView(_ collectionView: NSCollectionView,
                         itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem{
         let wallCell = wallListCollection.makeItem(withIdentifier: "WallCell", for: indexPath) as! WallCell
-        print("wall count : \(workspace.wallList.count) indexpath item \(indexPath.item)")
         wallCell.wall=workspace.wallList[indexPath.item]
         return wallCell
     }
