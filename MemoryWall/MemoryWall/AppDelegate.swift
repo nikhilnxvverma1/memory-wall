@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private var statusItem:NSStatusItem;
     private var entryPanelController:EntryPanelController;
+    private var workspaceController:WorkspaceController!
 
     override init() {
         self.statusItem=NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength);
@@ -21,6 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        
         statusItem.title="Memory";
         statusItem.menu=self.entryPanelController.entryMenu;
     }
@@ -29,5 +31,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
+    
+    @IBAction func undo(_ sender: NSMenuItem) {
+        ensureWorkspaceSetup()
+        workspaceController.workspace.undo()
+    }
+    
+    @IBAction func redo(_ sender: NSMenuItem) {
+        ensureWorkspaceSetup()
+        workspaceController.workspace.redo()
+    }
+    
+    private func ensureWorkspaceSetup(){
+        //inject the workspace in the entry panel
+        workspaceController=NSApplication.shared().mainWindow?.windowController?.contentViewController as? WorkspaceController
+        entryPanelController.workspace=workspaceController?.workspace
+    }
 }
 

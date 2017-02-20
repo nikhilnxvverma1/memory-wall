@@ -140,8 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				C45023161E58F4C600DC54B4 /* Editor */,
-				C4F74C001E5896DF00028075 /* Views */,
 				C4F74BFB1E588E1800028075 /* Controllers */,
+				C4F74C001E5896DF00028075 /* Views */,
 				C41545361E580A22001E7DFB /* AppDelegate.swift */,
 				C415453A1E580A22001E7DFB /* Document.swift */,
 				C415453F1E580A22001E7DFB /* Assets.xcassets */,

@@ -11,6 +11,7 @@
         <attribute name="anchorX" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="anchorY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="backgroundColorHashCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creationTimestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="endX" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="endY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="foregroundColorHashCode" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,6 +25,6 @@
     </entity>
     <elements>
         <element name="Memory" positionX="-351" positionY="-27" width="128" height="120"/>
-        <element name="Wall" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="Wall" positionX="-63" positionY="-18" width="128" height="255"/>
     </elements>
 </model>

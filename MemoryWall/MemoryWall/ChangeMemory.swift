@@ -22,5 +22,8 @@ class ChangeAnchorCommand: Command {
         return "Change memory";
     }
     
+    func updateAffectedViews(){
+        
+    }
 }
 

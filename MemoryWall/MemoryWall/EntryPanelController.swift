@@ -12,6 +12,7 @@ class EntryPanelController: NSViewController {
     
     
     var entryMenu: NSMenu?
+    var workspace:Workspace!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -30,9 +31,6 @@ class EntryPanelController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         Bundle.main.loadNibNamed("EntryPanelController", owner: nil, topLevelObjects: nil);
-        let wall=Wall();
-        wall.setValue("first-wall", forKey: "name");
-        wall.setValue("not ready", forKey: "imageFilename");
     }
     
     func createMenu()->NSMenu{

@@ -21,5 +21,9 @@ class ChangeAnchor: Command {
     func getName()->String{
         return "Change anchoring";
     }
+    
+    func updateAffectedViews(){
+        
+    }
 
 }

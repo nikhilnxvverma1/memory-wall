@@ -22,5 +22,9 @@ class CreateMemory: Command {
         return "Create memory";
     }
     
+    func updateAffectedViews(){
+        
+    }
+    
 }
 

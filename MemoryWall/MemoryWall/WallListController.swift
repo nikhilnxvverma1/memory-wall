@@ -28,7 +28,9 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
     }
     
     @IBAction func createWall(_ sender: Any) {
-        
+        let name="\(arc4random())Gen"
+        let createWall=CreateWall(workspace:workspace,name:name,wallListCollection:wallListCollection)
+        workspace.comit(command: createWall,execute: true)
     }
     
     
@@ -40,12 +42,15 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
     
     func collectionView(_ collectionView: NSCollectionView,
                         numberOfItemsInSection section: Int) -> Int{
-        return 10
+        return workspace.wallList.count
     }
     
     func collectionView(_ collectionView: NSCollectionView,
                         itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem{
-        return wallListCollection.makeItem(withIdentifier: "WallCell", for: indexPath)
+        let wallCell = wallListCollection.makeItem(withIdentifier: "WallCell", for: indexPath) as! WallCell
+        print("wall count : \(workspace.wallList.count) indexpath item \(indexPath.item)")
+        wallCell.wall=workspace.wallList[indexPath.item]
+        return wallCell
     }
     
 //    func collectionView(_ collectionView: NSCollectionView,

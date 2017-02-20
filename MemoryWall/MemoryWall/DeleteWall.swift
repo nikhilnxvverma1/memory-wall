@@ -22,5 +22,9 @@ class DeleteWall: Command {
         return "Delete wall";
     }
     
+    func updateAffectedViews(){
+        
+    }
+    
 }
 

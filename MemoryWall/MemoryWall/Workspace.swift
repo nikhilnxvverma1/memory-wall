@@ -26,6 +26,7 @@ class Workspace: NSObject {
         set(moc){
             _managedObjectContext=moc
             backend.managedObjectContext=moc
+            wallList=backend.retrieveAllWalls()
         }
     }
     
@@ -40,6 +41,8 @@ class Workspace: NSObject {
         if(execute){
             command.execute()
         }
+        updateDataModel()
+        command.updateAffectedViews()
         future.removeAll()
         history.append(command)
     }
@@ -48,6 +51,13 @@ class Workspace: NSObject {
         if(!history.isEmpty){
             let lastCommand=history.removeLast()
             lastCommand.unExecute()
+            updateDataModel()
+            lastCommand.updateAffectedViews()
+            do{
+                try managedObjectContext.save()
+            }catch{
+                print("Error occured while saving contex")
+            }
             future.append(lastCommand)
         }else{
             print("Undo stack is empty")
@@ -58,15 +68,23 @@ class Workspace: NSObject {
         if(!future.isEmpty){
             let undidCommand=future.removeLast()
             undidCommand.execute()
+            updateDataModel()
+            undidCommand.updateAffectedViews()
+            do{
+                try managedObjectContext.save()
+            }catch{
+                print("Error occured while saving contex")
+            }
+            
             history.append(undidCommand)
         }else{
             print("Redo stack is empty")
         }
     }
     
-    private func retrieveDataModel(){
-        //store all walls in a list
-        
+    private func updateDataModel(){
+        wallList=backend.retrieveAllWalls()//update the data model that we hold
     }
+
     
 }

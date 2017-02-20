@@ -9,7 +9,8 @@
 import Cocoa
 
 protocol Command{
-    func execute();
-    func unExecute();
-    func getName()->String;
+    func execute()
+    func unExecute()
+    func getName()->String
+    func updateAffectedViews()
 }

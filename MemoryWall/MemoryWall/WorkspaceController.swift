@@ -10,11 +10,12 @@ import Cocoa
 
 class WorkspaceController: NSViewController {
 
-    var workspace:Workspace=Workspace()
+    var workspace:Workspace!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        workspace=Workspace()
         for childController in childViewControllers{
             childController.perform(Selector(("receiveWorkspace:")), with: workspace);
         }

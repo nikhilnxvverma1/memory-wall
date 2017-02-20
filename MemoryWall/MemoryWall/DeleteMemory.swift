@@ -22,4 +22,8 @@ class DeleteMemory: Command {
         return "Delete memory";
     }
     
+    func updateAffectedViews(){
+        
+    }
+    
 }
