@@ -797,7 +797,7 @@
                                             <rect key="frame" x="1" y="1" width="298" height="721"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <collectionView id="eLy-X3-XmZ">
+                                                <collectionView selectable="YES" allowsEmptySelection="NO" id="eLy-X3-XmZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="298" height="721"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="g4p-gz-mg9">

@@ -32,9 +32,9 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
         let createWall=CreateWall(workspace:workspace,name:name,wallListCollection:wallListCollection)
         workspace.comit(command: createWall,execute: true)
     }
+	
     
-    
-    //Collection view Data source
+    //MARK: Wall List Data source
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int{
         return 1
@@ -51,11 +51,18 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
         wallCell.wall=workspace.wallList[indexPath.item]
         return wallCell
     }
-    
+	
 //    func collectionView(_ collectionView: NSCollectionView,
 //                                 viewForSupplementaryElementOfKind kind: String,
 //                                 at indexPath: IndexPath) -> NSView{
 //        return nil
 //    }
 
+	//MARK: Wall List Delegate
+	
+	func collectionView(_ collectionView: NSCollectionView,
+	                    didSelectItemsAt indexPaths: Set<IndexPath>){
+		workspace.selectedWall=workspace.wallList[indexPaths.first!.item]
+		print("Item got selected \(indexPaths)")
+	}
 }

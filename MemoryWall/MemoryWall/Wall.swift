@@ -69,6 +69,7 @@ class Wall: NSObject {
 	*/
 	func setDefaults(){
 		name="Untitled"
+		thumbnail=NSImage(named:"NSFolderSmart")
 		foregroundColor=NSColor(hashcode: "#000000")
 		backgroundColor=NSColor(hashcode: "#FFFFFF")
 		creationTimestamp=NSDate()

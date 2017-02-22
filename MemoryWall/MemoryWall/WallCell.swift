@@ -11,6 +11,12 @@ import Cocoa
 class WallCell: NSCollectionViewItem {
 
     private var _wall:Wall!
+	
+	override var isSelected: Bool{
+		didSet{
+			updateView()//highlighting should be handled inside draw rect method
+		}
+	}
     
     var wall:Wall{
         get{
@@ -21,15 +27,24 @@ class WallCell: NSCollectionViewItem {
             updateView()
         }
     }
-    
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
-    
+	
+	/**
+	Updates the informational attributes of the view such as thumbnail and name
+	*/
     private func updateView(){
-        let name=view.viewWithTag(1) as! NSTextField
-        name.stringValue=wall.name!
+		
+		imageView?.image=wall.thumbnail
+		if(isSelected){
+			textField?.stringValue="selected"
+		}else{
+			textField?.stringValue=wall.name!
+		}
+		
         view.needsDisplay=true
     }
 }

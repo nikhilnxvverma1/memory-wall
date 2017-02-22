@@ -17,6 +17,7 @@ class CreateWall: Command {
     init(workspace:Workspace,name:String,wallListCollection:NSCollectionView){
         self.workspace=workspace;
         wall=Wall()
+		wall.name=name
         self.wallListCollection=wallListCollection
     }
     
@@ -34,8 +35,21 @@ class CreateWall: Command {
         return "Create wall";
     }
     
-    func updateAffectedViews(){
+	func updateAffectedViews(afterExecution:Bool){
         wallListCollection.reloadData()
+		
+		//maintain selection of current wall
+		if(workspace.selectedWall==nil){
+			return
+		}
+		let index=workspace.wallList.index(of: workspace.selectedWall)//TODO check if the current selection is this new wall itself
+		let selectedItemPath=IndexPath(item: index!, section: 0)
+		if(afterExecution){
+			wallListCollection.selectItems(at: [selectedItemPath], scrollPosition: NSCollectionViewScrollPosition.bottom)
+		}else{
+			wallListCollection.selectItems(at: [selectedItemPath], scrollPosition: NSCollectionViewScrollPosition.bottom)
+		}
+		
     }
     
 }

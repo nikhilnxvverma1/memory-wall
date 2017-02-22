@@ -22,7 +22,7 @@ class CreateMemory: Command {
         return "Create memory";
     }
     
-    func updateAffectedViews(){
+    func updateAffectedViews(afterExecution:Bool){
         
     }
     

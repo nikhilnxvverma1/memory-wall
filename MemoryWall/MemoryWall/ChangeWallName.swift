@@ -22,7 +22,7 @@ class ChangeWallName: Command {
         return "Change wall's name";
     }
     
-    func updateAffectedViews(){
+    func updateAffectedViews(afterExecution:Bool){
         
     }
     

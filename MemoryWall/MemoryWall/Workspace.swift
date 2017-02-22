@@ -37,7 +37,7 @@ class Workspace: NSObject {
         if(execute){
             command.execute()
         }
-        command.updateAffectedViews()
+        command.updateAffectedViews(afterExecution: true)
         future.removeAll()
         history.append(command)
     }
@@ -46,7 +46,7 @@ class Workspace: NSObject {
         if(!history.isEmpty){
             let lastCommand=history.removeLast()
             lastCommand.unExecute()
-            lastCommand.updateAffectedViews()
+            lastCommand.updateAffectedViews(afterExecution: false)
             future.append(lastCommand)
         }else{
             print("Undo stack is empty")
@@ -57,7 +57,7 @@ class Workspace: NSObject {
         if(!future.isEmpty){
             let undidCommand=future.removeLast()
             undidCommand.execute()
-            undidCommand.updateAffectedViews()
+            undidCommand.updateAffectedViews(afterExecution: true)
             history.append(undidCommand)
         }else{
             print("Redo stack is empty")

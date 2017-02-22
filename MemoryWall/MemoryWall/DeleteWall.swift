@@ -22,7 +22,7 @@ class DeleteWall: Command {
         return "Delete wall";
     }
     
-    func updateAffectedViews(){
+    func updateAffectedViews(afterExecution:Bool){
         
     }
     

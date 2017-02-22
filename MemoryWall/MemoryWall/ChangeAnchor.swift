@@ -22,7 +22,7 @@ class ChangeAnchor: Command {
         return "Change anchoring";
     }
     
-    func updateAffectedViews(){
+    func updateAffectedViews(afterExecution:Bool){
         
     }
 
