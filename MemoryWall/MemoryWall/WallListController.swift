@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class WallListController: NSViewController,NSCollectionViewDelegate,NSCollectionViewDataSource {
+class WallListController: NSViewController,NSCollectionViewDelegate,NSCollectionViewDataSource,WallCellDelegate {
 
     var workspace:Workspace!;
     
@@ -49,14 +49,9 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
                         itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem{
         let wallCell = wallListCollection.makeItem(withIdentifier: "WallCell", for: indexPath) as! WallCell
         wallCell.wall=workspace.wallList[indexPath.item]
+		wallCell.delegate=self
         return wallCell
     }
-	
-//    func collectionView(_ collectionView: NSCollectionView,
-//                                 viewForSupplementaryElementOfKind kind: String,
-//                                 at indexPath: IndexPath) -> NSView{
-//        return nil
-//    }
 
 	//MARK: Wall List Delegate
 	
@@ -64,5 +59,14 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
 	                    didSelectItemsAt indexPaths: Set<IndexPath>){
 		workspace.selectedWall=workspace.wallList[indexPaths.first!.item]
 		print("Item got selected \(indexPaths)")
+	}
+	
+	//MARK: Wall Cell Delegate
+	
+	func wallCell(_ wallCell: WallCell, newName: String) {
+		
+		//create a command and commit it
+		let renameWall=ChangeWallName(wallCell.wall,newName,wallListCollection)
+		workspace.comit(command: renameWall,execute: true)
 	}
 }

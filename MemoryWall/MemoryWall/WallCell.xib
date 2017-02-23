@@ -28,18 +28,22 @@
                     <rect key="frame" x="75" y="35" width="0.0" height="53"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="ad5-Wz-7x7"/>
                 </imageView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw7-cy-yBv" userLabel="name">
-                    <rect key="frame" x="42" y="10" width="67" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="wall-name" id="HW7-T6-RBG">
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="1" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw7-cy-yBv" userLabel="name">
+                    <rect key="frame" x="-2" y="10" width="154" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" focusRingType="none" alignment="center" title="wall-name" placeholderString="Wall Name" id="HW7-T6-RBG">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="finishedEditingWallName:" target="1OC-yO-u7w" id="0vW-t0-kUk"/>
+                    </connections>
                 </textField>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="fw7-cy-yBv" secondAttribute="bottom" constant="10" id="5HM-cm-69F"/>
                 <constraint firstItem="fw7-cy-yBv" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="7TC-zo-fzl"/>
+                <constraint firstItem="fw7-cy-yBv" firstAttribute="width" secondItem="Hz6-mo-xeY" secondAttribute="width" id="CWt-eR-Ktf"/>
                 <constraint firstItem="7Bw-iR-Al1" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="12" id="IB6-nT-3Vf"/>
                 <constraint firstItem="7Bw-iR-Al1" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="kfz-Uf-NQx"/>
                 <constraint firstItem="fw7-cy-yBv" firstAttribute="top" secondItem="7Bw-iR-Al1" secondAttribute="bottom" constant="8" id="n9u-zb-Abx"/>

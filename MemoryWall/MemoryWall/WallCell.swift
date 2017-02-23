@@ -11,6 +11,7 @@ import Cocoa
 class WallCell: NSCollectionViewItem,WallCellViewDelegate {
 
     private var _wall:Wall!
+	var delegate:WallCellDelegate!
 	
 	override var isSelected: Bool{
 		didSet{
@@ -54,6 +55,20 @@ class WallCell: NSCollectionViewItem,WallCellViewDelegate {
     }
 	
 	func doubleClickedWallCell(){
-		print("Wall cell double clicked")
+		textField?.isEditable=true
+		textField?.becomeFirstResponder()
 	}
+	
+	@IBAction func finishedEditingWallName(_ sender: NSTextField) {
+		if(sender==textField){
+			textField?.isEditable=false
+			textField?.resignFirstResponder()
+			
+			delegate.wallCell(self, newName: textField!.stringValue)
+		}
+	}
+}
+
+protocol WallCellDelegate {
+	func wallCell(_ wallCell:WallCell, newName:String)
 }

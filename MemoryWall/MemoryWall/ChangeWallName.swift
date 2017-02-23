@@ -9,13 +9,25 @@
 import Cocoa
 
 class ChangeWallName: Command {
-    
+	
+	private var wallList:NSCollectionView
+	private var wall:Wall
+	private var oldName:String
+	private var newName:String
+	
+	init(_ wall:Wall,_ newName:String,_ wallList:NSCollectionView) {
+		self.wall=wall
+		self.newName=newName
+		self.oldName=wall.name!
+		self.wallList=wallList
+	}
+	
     func execute(){
-        
+        self.wall.name=newName
     }
     
     func unExecute(){
-        
+        self.wall.name=oldName
     }
     
     func getName()->String{
@@ -23,7 +35,7 @@ class ChangeWallName: Command {
     }
     
     func updateAffectedViews(afterExecution:Bool){
-        
+        wallList.reloadData()
     }
     
 }
