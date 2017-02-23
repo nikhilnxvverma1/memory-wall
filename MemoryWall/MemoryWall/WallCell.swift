@@ -45,12 +45,7 @@ class WallCell: NSCollectionViewItem,WallCellViewDelegate {
     private func updateView(){
 		
 		imageView?.image=wall.thumbnail
-		if(isSelected){
-			textField?.stringValue="selected"
-		}else{
-			textField?.stringValue=wall.name!
-		}
-		
+		textField?.stringValue=wall.name!
         view.needsDisplay=true
     }
 	

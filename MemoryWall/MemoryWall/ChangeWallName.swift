@@ -10,16 +10,18 @@ import Cocoa
 
 class ChangeWallName: Command {
 	
-	private var wallList:NSCollectionView
+	private var workspace:Workspace
+	private var wallListCollection:NSCollectionView
 	private var wall:Wall
 	private var oldName:String
 	private var newName:String
 	
-	init(_ wall:Wall,_ newName:String,_ wallList:NSCollectionView) {
+	init(_ wall:Wall,_ newName:String,_ wallListCollection:NSCollectionView,_ workspace:Workspace) {
 		self.wall=wall
 		self.newName=newName
 		self.oldName=wall.name!
-		self.wallList=wallList
+		self.wallListCollection=wallListCollection
+		self.workspace=workspace
 	}
 	
     func execute(){
@@ -35,7 +37,11 @@ class ChangeWallName: Command {
     }
     
     func updateAffectedViews(afterExecution:Bool){
-        wallList.reloadData()
+        wallListCollection.reloadData()
+		
+		let index=workspace.wallList.index(of: wall)!
+		wallListCollection.selectItems(at: [IndexPath(item: index, section: 0)],
+		                               scrollPosition: NSCollectionViewScrollPosition.bottom)
     }
     
 }

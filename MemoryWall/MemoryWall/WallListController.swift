@@ -65,8 +65,13 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
 	
 	func wallCell(_ wallCell: WallCell, newName: String) {
 		
+		if(wallCell.wall.name==newName){
+			print("Same name, not commiting")
+			return
+		}
+		
 		//create a command and commit it
-		let renameWall=ChangeWallName(wallCell.wall,newName,wallListCollection)
+		let renameWall=ChangeWallName(wallCell.wall,newName,wallListCollection,workspace)
 		workspace.comit(command: renameWall,execute: true)
 	}
 }

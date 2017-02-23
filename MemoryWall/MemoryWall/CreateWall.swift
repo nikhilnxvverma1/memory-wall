@@ -20,7 +20,9 @@ class CreateWall: Command {
         wall=Wall()
 		wall.name=name
         self.wallListCollection=wallListCollection
-		previousSelection=workspace.selectedWall
+		
+		//get the previous wall if exists, if doesn't get the last wall in list, if possible
+		previousSelection = workspace.selectedWall != nil ? workspace.selectedWall : workspace.wallList.count>0 ? workspace.wallList.last : nil
     }
     
     func execute(){
