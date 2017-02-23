@@ -8,13 +8,16 @@
 
 import Cocoa
 
-class WallCell: NSCollectionViewItem {
+class WallCell: NSCollectionViewItem,WallCellViewDelegate {
 
     private var _wall:Wall!
 	
 	override var isSelected: Bool{
 		didSet{
-			updateView()//highlighting should be handled inside draw rect method
+			if(_wall != nil){// on creating a wall and selecting at the same time, this property will be nil
+				updateView()//highlighting should be handled inside draw rect method
+			}
+			
 		}
 	}
     
@@ -31,6 +34,8 @@ class WallCell: NSCollectionViewItem {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+		let wallCellView=view as! WallCellView
+		wallCellView.delegate=self
     }
 	
 	/**
@@ -47,4 +52,8 @@ class WallCell: NSCollectionViewItem {
 		
         view.needsDisplay=true
     }
+	
+	func doubleClickedWallCell(){
+		print("Wall cell double clicked")
+	}
 }

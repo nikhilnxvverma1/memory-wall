@@ -20,6 +20,7 @@
 		C47EDD2D1E592CCB00BBDDAA /* WallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47EDD2B1E592CCB00BBDDAA /* WallCell.xib */; };
 		C47EDD301E5A8F1400BBDDAA /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47EDD2F1E5A8F1400BBDDAA /* Wall.swift */; };
 		C47EDD331E5AA76800BBDDAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47EDD321E5AA76800BBDDAA /* Extensions.swift */; };
+		C4C148F01E5E665E001CEC3D /* WallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C148EF1E5E665E001CEC3D /* WallCellView.swift */; };
 		C4CEBEBC1E58F85A006CF121 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEBB1E58F85A006CF121 /* Command.swift */; };
 		C4CEBEBE1E58FAB1006CF121 /* ChangeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEBD1E58FAB1006CF121 /* ChangeAnchor.swift */; };
 		C4CEBEC01E58FB10006CF121 /* DeleteMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEBF1E58FB10006CF121 /* DeleteMemory.swift */; };
@@ -75,6 +76,7 @@
 		C47EDD2B1E592CCB00BBDDAA /* WallCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallCell.xib; sourceTree = "<group>"; };
 		C47EDD2F1E5A8F1400BBDDAA /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
 		C47EDD321E5AA76800BBDDAA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C4C148EF1E5E665E001CEC3D /* WallCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallCellView.swift; sourceTree = "<group>"; };
 		C4CEBEBB1E58F85A006CF121 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		C4CEBEBD1E58FAB1006CF121 /* ChangeAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeAnchor.swift; sourceTree = "<group>"; };
 		C4CEBEBF1E58FB10006CF121 /* DeleteMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteMemory.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				C4F74C051E58A6BE00028075 /* WallArtView.swift */,
 				C47EDD2A1E592CCB00BBDDAA /* WallCell.swift */,
 				C47EDD2B1E592CCB00BBDDAA /* WallCell.xib */,
+				C4C148EF1E5E665E001CEC3D /* WallCellView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C148F01E5E665E001CEC3D /* WallCellView.swift in Sources */,
 				C415453E1E580A22001E7DFB /* Document.xcdatamodeld in Sources */,
 				C450231C1E58F54C00DC54B4 /* RenderingStrategy.swift in Sources */,
 				C4F74C0B1E58ABB800028075 /* EntryPanelController.swift in Sources */,

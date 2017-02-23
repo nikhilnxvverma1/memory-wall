@@ -10,15 +10,17 @@ import Cocoa
 
 class CreateWall: Command {
     
-    var workspace:Workspace
-    var wall:Wall
-    var wallListCollection:NSCollectionView
+    private var workspace:Workspace
+    private var wall:Wall
+    private var wallListCollection:NSCollectionView
+	private var previousSelection:Wall?
     
     init(workspace:Workspace,name:String,wallListCollection:NSCollectionView){
         self.workspace=workspace;
         wall=Wall()
 		wall.name=name
         self.wallListCollection=wallListCollection
+		previousSelection=workspace.selectedWall
     }
     
     func execute(){
@@ -38,16 +40,17 @@ class CreateWall: Command {
 	func updateAffectedViews(afterExecution:Bool){
         wallListCollection.reloadData()
 		
-		//maintain selection of current wall
-		if(workspace.selectedWall==nil){
-			return
-		}
-		let index=workspace.wallList.index(of: workspace.selectedWall)//TODO check if the current selection is this new wall itself
-		let selectedItemPath=IndexPath(item: index!, section: 0)
+		//maintain selection of wall based on weather this is called after exection or after unexection
 		if(afterExecution){
-			wallListCollection.selectItems(at: [selectedItemPath], scrollPosition: NSCollectionViewScrollPosition.bottom)
+			let index=workspace.wallList.index(of: wall)!
+			wallListCollection.selectItems(at: [IndexPath(item: index, section: 0)],
+			                               scrollPosition: NSCollectionViewScrollPosition.bottom)
 		}else{
-			wallListCollection.selectItems(at: [selectedItemPath], scrollPosition: NSCollectionViewScrollPosition.bottom)
+			if(previousSelection != nil){
+				let index=workspace.wallList.index(of: previousSelection!)!
+				wallListCollection.selectItems(at: [IndexPath(item: index, section: 0)],
+				                               scrollPosition: NSCollectionViewScrollPosition.bottom)
+			}
 		}
 		
     }
