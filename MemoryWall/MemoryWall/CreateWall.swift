@@ -47,11 +47,15 @@ class CreateWall: Command {
 			let index=workspace.wallList.index(of: wall)!
 			wallListCollection.selectItems(at: [IndexPath(item: index, section: 0)],
 			                               scrollPosition: NSCollectionViewScrollPosition.bottom)
+			workspace.selectedWall=wall
 		}else{
 			if(previousSelection != nil){
 				let index=workspace.wallList.index(of: previousSelection!)!
 				wallListCollection.selectItems(at: [IndexPath(item: index, section: 0)],
 				                               scrollPosition: NSCollectionViewScrollPosition.bottom)
+				workspace.selectedWall=previousSelection
+			}else{
+				workspace.selectedWall=nil
 			}
 		}
 		
