@@ -10,7 +10,7 @@ import Cocoa
 
 class WallListController: NSViewController,NSCollectionViewDelegate,NSCollectionViewDataSource,WallCellDelegate {
 
-    var workspace:Workspace!;
+    var container:WorkspaceController!;
     
     @IBOutlet weak var wallListCollection: NSCollectionView!
     
@@ -23,14 +23,15 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
         wallListCollection.dataSource=self
     }
     
-    func receiveWorkspace(_ workspace:Workspace){
-        self.workspace=workspace;
+	func receiveWorkspaceController(_ controller:WorkspaceController){
+		container=controller
+		container.wallListController=self
     }
     
     @IBAction func createWall(_ sender: Any) {
         let name="\(arc4random())Gen"
-        let createWall=CreateWall(workspace:workspace,name:name,wallListCollection:wallListCollection)
-        workspace.comit(command: createWall,execute: true)
+        let createWall=CreateWall(workspace:container.workspace,name:name,wallListCollection:wallListCollection)
+        container.workspace.comit(command: createWall,execute: true)
     }
 	
     
@@ -42,13 +43,13 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
     
     func collectionView(_ collectionView: NSCollectionView,
                         numberOfItemsInSection section: Int) -> Int{
-        return workspace.wallList.count
+        return container.workspace.wallList.count
     }
     
     func collectionView(_ collectionView: NSCollectionView,
                         itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem{
         let wallCell = wallListCollection.makeItem(withIdentifier: "WallCell", for: indexPath) as! WallCell
-        wallCell.wall=workspace.wallList[indexPath.item]
+        wallCell.wall=container.workspace.wallList[indexPath.item]
 		wallCell.delegate=self
         return wallCell
     }
@@ -57,7 +58,7 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
 	
 	func collectionView(_ collectionView: NSCollectionView,
 	                    didSelectItemsAt indexPaths: Set<IndexPath>){
-		workspace.selectedWall=workspace.wallList[indexPaths.first!.item]
+		container.workspace.selectedWall=container.workspace.wallList[indexPaths.first!.item]
 		print("Item got selected \(indexPaths)")
 	}
 	
@@ -71,7 +72,7 @@ class WallListController: NSViewController,NSCollectionViewDelegate,NSCollection
 		}
 		
 		//create a command and commit it
-		let renameWall=ChangeWallName(wallCell.wall,newName,wallListCollection,workspace)
-		workspace.comit(command: renameWall,execute: true)
+		let renameWall=ChangeWallName(wallCell.wall,newName,wallListCollection,container.workspace)
+		container.workspace.comit(command: renameWall,execute: true)
 	}
 }

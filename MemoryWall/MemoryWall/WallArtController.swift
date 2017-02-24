@@ -10,15 +10,16 @@ import Cocoa
 
 class WallArtController: NSViewController {
     
-    var workspace:Workspace!;
+    var container:WorkspaceController!;
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
     
-    func receiveWorkspace(_ workspace:Workspace){
-        self.workspace=workspace;
-    }
-    
+	func receiveWorkspaceController(_ controller:WorkspaceController){
+		container=controller
+		container.wallArtController=self
+	}
+	
 }
