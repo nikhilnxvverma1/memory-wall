@@ -1,2 +1,5 @@
-# memory-wall
-A 'wallpaper' mac app that displays useful things you tend to forget like keyboard shortcuts.
+# Presenter
+A mac app that creates basic presentational slides (and can possibly produce GIFS)
+
+### Progress so far:
+![slides on the left](resource-development/screenshot.png)
