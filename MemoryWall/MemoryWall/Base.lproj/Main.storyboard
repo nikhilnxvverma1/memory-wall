@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -688,7 +688,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="QPU-6w-jI8" userLabel="Wall list">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="760"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="710"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="az8-WT-cCy"/>
                                 </constraints>
@@ -696,8 +696,14 @@
                                     <segue destination="G6V-6p-9lc" kind="embed" id="et8-4Q-plD"/>
                                 </connections>
                             </containerView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="D35-BX-tSh" userLabel="Wall art">
+                                <rect key="frame" x="300" y="0.0" width="980" height="710"/>
+                                <connections>
+                                    <segue destination="APs-1n-TMc" kind="embed" id="oCz-aj-FnH"/>
+                                </connections>
+                            </containerView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="r6w-E7-kBy" userLabel="Wall operation">
-                                <rect key="frame" x="300" y="0.0" width="980" height="50"/>
+                                <rect key="frame" x="0.0" y="710" width="1280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bZ8-dY-EMo"/>
                                 </constraints>
@@ -705,24 +711,18 @@
                                     <segue destination="BEg-Yd-Mj1" kind="embed" id="SbC-0c-BE4"/>
                                 </connections>
                             </containerView>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="D35-BX-tSh" userLabel="Wall art">
-                                <rect key="frame" x="300" y="50" width="980" height="710"/>
-                                <connections>
-                                    <segue destination="APs-1n-TMc" kind="embed" id="oCz-aj-FnH"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="QPU-6w-jI8" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="6PY-40-8L4"/>
+                            <constraint firstItem="D35-BX-tSh" firstAttribute="top" secondItem="r6w-E7-kBy" secondAttribute="bottom" id="63d-Is-4Y9"/>
+                            <constraint firstItem="r6w-E7-kBy" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="EcR-tw-Yt4"/>
                             <constraint firstAttribute="trailing" secondItem="D35-BX-tSh" secondAttribute="trailing" id="FCJ-Fh-fNn"/>
-                            <constraint firstItem="r6w-E7-kBy" firstAttribute="leading" secondItem="QPU-6w-jI8" secondAttribute="trailing" id="agC-mK-9Uv"/>
-                            <constraint firstAttribute="bottom" secondItem="r6w-E7-kBy" secondAttribute="bottom" id="epJ-xv-hw4"/>
-                            <constraint firstItem="r6w-E7-kBy" firstAttribute="top" secondItem="D35-BX-tSh" secondAttribute="bottom" id="ikc-Tc-0iZ"/>
+                            <constraint firstItem="r6w-E7-kBy" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="YMm-Rt-b7i"/>
+                            <constraint firstItem="QPU-6w-jI8" firstAttribute="top" secondItem="r6w-E7-kBy" secondAttribute="bottom" id="b8Z-XA-k0O"/>
+                            <constraint firstAttribute="bottom" secondItem="QPU-6w-jI8" secondAttribute="bottom" id="dIO-MR-WCe"/>
+                            <constraint firstAttribute="bottom" secondItem="D35-BX-tSh" secondAttribute="bottom" id="ssa-Gq-EUx"/>
                             <constraint firstAttribute="trailing" secondItem="r6w-E7-kBy" secondAttribute="trailing" id="uG3-x3-OTt"/>
-                            <constraint firstItem="QPU-6w-jI8" firstAttribute="centerY" secondItem="ERx-hH-rdd" secondAttribute="centerY" id="utb-9d-Am3"/>
-                            <constraint firstItem="QPU-6w-jI8" firstAttribute="height" secondItem="ERx-hH-rdd" secondAttribute="height" id="vhg-N0-x5j"/>
                             <constraint firstItem="D35-BX-tSh" firstAttribute="leading" secondItem="QPU-6w-jI8" secondAttribute="trailing" id="vqs-tW-jkg"/>
-                            <constraint firstItem="D35-BX-tSh" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="wET-iD-AhR"/>
+                            <constraint firstItem="QPU-6w-jI8" firstAttribute="leading" secondItem="r6w-E7-kBy" secondAttribute="leading" id="wFQ-5n-520"/>
                         </constraints>
                     </view>
                 </viewController>
