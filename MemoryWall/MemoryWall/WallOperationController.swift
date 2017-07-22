@@ -29,4 +29,11 @@ class WallOperationController: NSViewController {
 		let deleteWall=DeleteWall(container.workspace.selectedWall,container.wallListController.wallListCollection,container.workspace)
 		container.workspace.comit(command: deleteWall,execute: true)
 	}
+	@IBAction func circlePressed(_ sender: Any) {
+		container.workspace.tool=Tool.Circle
+	}
+	
+	@IBAction func rectanglePressed(_ sender: Any) {
+		container.workspace.tool=Tool.Rectangle
+	}
 }

@@ -874,12 +874,15 @@
                                             <action selector="deleteWall:" target="BEg-Yd-Mj1" id="kM0-1S-M0Q"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CVR-Tf-DTQ">
-                                        <rect key="frame" x="607" y="7" width="101" height="32"/>
+                                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CVR-Tf-DTQ">
+                                        <rect key="frame" x="607" y="5" width="101" height="32"/>
                                         <buttonCell key="cell" type="push" title="Rectangle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F26-so-A98">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="rectanglePressed:" target="BEg-Yd-Mj1" id="uZY-FJ-Iek"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jR0-pP-Hr6">
                                         <rect key="frame" x="519" y="7" width="75" height="32"/>
@@ -888,6 +891,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="circlePressed:" target="BEg-Yd-Mj1" id="hdN-9j-DcQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

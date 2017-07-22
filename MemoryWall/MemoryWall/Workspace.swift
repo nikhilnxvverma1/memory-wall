@@ -14,6 +14,7 @@ class Workspace: NSObject {
     var future:[Command]
     var selectedWall:Wall!
     var wallList:[Wall]=[]
+	var tool:Tool;
     
     private var _managedObjectContext:NSManagedObjectContext!
     var managedObjectContext:NSManagedObjectContext{
