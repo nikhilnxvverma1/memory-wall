@@ -32,6 +32,7 @@ class Workspace: NSObject {
         renderer=DumbRenderingStrategy()
         history=[Command]()
         future=[Command]()
+		self.tool=Tool.Rectangle
     }
     
     func comit(command:Command,execute:Bool=false){
