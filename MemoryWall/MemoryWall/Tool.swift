@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+/** Action to perform on the workspace when dragged */ 
 enum Tool{
 	case Rectangle
 	case Circle
