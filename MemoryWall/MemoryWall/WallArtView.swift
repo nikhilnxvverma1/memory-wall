@@ -18,5 +18,22 @@ class WallArtView: NSView {
         NSRectFill(dirtyRect);
         super.draw(dirtyRect);
     }
+	
+	override func mouseDown(with event: NSEvent) {
+		//TODO
+		NSLog("came here at mouse down")
+	}
+	
+	override func mouseDragged(with event: NSEvent) {
+		//TODO
+		NSLog("came here at mouse dragged")
+	}
+	
+	override func mouseUp(with event: NSEvent) {
+		//TODO
+		NSLog("came here at mouse up")
+	}
+	
+	
     
 }
