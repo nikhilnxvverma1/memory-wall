@@ -21,6 +21,7 @@
 		C47EDD301E5A8F1400BBDDAA /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47EDD2F1E5A8F1400BBDDAA /* Wall.swift */; };
 		C47EDD331E5AA76800BBDDAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47EDD321E5AA76800BBDDAA /* Extensions.swift */; };
 		C48F86721F2398A800412D7B /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86711F2398A800412D7B /* Tool.swift */; };
+		C48F86741F2A4F5F00412D7B /* PressDragReleaseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86731F2A4F5F00412D7B /* PressDragReleaseProcessor.swift */; };
 		C4C148F01E5E665E001CEC3D /* WallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C148EF1E5E665E001CEC3D /* WallCellView.swift */; };
 		C4CEBEBC1E58F85A006CF121 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEBB1E58F85A006CF121 /* Command.swift */; };
 		C4CEBEBE1E58FAB1006CF121 /* ChangeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CEBEBD1E58FAB1006CF121 /* ChangeAnchor.swift */; };
@@ -78,6 +79,7 @@
 		C47EDD2F1E5A8F1400BBDDAA /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
 		C47EDD321E5AA76800BBDDAA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C48F86711F2398A800412D7B /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		C48F86731F2A4F5F00412D7B /* PressDragReleaseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressDragReleaseProcessor.swift; sourceTree = "<group>"; };
 		C4C148EF1E5E665E001CEC3D /* WallCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallCellView.swift; sourceTree = "<group>"; };
 		C4CEBEBB1E58F85A006CF121 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		C4CEBEBD1E58FAB1006CF121 /* ChangeAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeAnchor.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				C45023171E58F4E100DC54B4 /* Workspace.swift */,
 				C48F86711F2398A800412D7B /* Tool.swift */,
 				C450231B1E58F54C00DC54B4 /* RenderingStrategy.swift */,
+				C48F86731F2A4F5F00412D7B /* PressDragReleaseProcessor.swift */,
 			);
 			name = Editor;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				C41545371E580A22001E7DFB /* AppDelegate.swift in Sources */,
 				C4CEBEC61E58FB95006CF121 /* DeleteWall.swift in Sources */,
 				C47EDD331E5AA76800BBDDAA /* Extensions.swift in Sources */,
+				C48F86741F2A4F5F00412D7B /* PressDragReleaseProcessor.swift in Sources */,
 				C4CEBEBC1E58F85A006CF121 /* Command.swift in Sources */,
 				C45023181E58F4E100DC54B4 /* Workspace.swift in Sources */,
 				C4CEBEC41E58FB82006CF121 /* ChangeMemory.swift in Sources */,
