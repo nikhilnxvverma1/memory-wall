@@ -11,13 +11,13 @@ import Foundation
 class CreateCircle: Command,PressDragReleaseProcessor {
 	
 	private var workspace:Workspace
-	private var wall:Wall
+	private var artboard:Wall
 	private var previousSelection:Wall?
 	
 	init(workspace:Workspace,name:String){
 		self.workspace=workspace;
-		wall=Wall()
-		wall.name=name
+		artboard=Wall()
+		artboard.name=name
 		
 		//get the previous wall if exists, if doesn't get the last wall in list, if possible
 		previousSelection = workspace.selectedWall != nil ? workspace.selectedWall : workspace.wallList.count>0 ? workspace.wallList.last : nil
