@@ -9,6 +9,8 @@
 import Cocoa
 
 class WallArtView: NSView {
+	
+	private var workspace:Workspace
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -22,6 +24,7 @@ class WallArtView: NSView {
 	override func mouseDown(with event: NSEvent) {
 		//TODO
 		NSLog("came here at mouse down")
+		
 	}
 	
 	override func mouseDragged(with event: NSEvent) {

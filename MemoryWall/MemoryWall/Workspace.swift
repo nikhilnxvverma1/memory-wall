@@ -14,7 +14,7 @@ class Workspace: NSObject {
     var future:[Command]
     var selectedWall:Wall!
     var wallList:[Wall]=[]
-	var tool:Tool;
+	var dragHandler:PressDragReleaseProcessor;
     
     private var _managedObjectContext:NSManagedObjectContext!
     var managedObjectContext:NSManagedObjectContext{
@@ -32,7 +32,6 @@ class Workspace: NSObject {
         renderer=DumbRenderingStrategy()
         history=[Command]()
         future=[Command]()
-		self.tool=Tool.Rectangle
     }
     
     func comit(command:Command,execute:Bool=false){
@@ -65,4 +64,15 @@ class Workspace: NSObject {
             print("Redo stack is empty")
         }
     }
+	
+	func setTool(tool:Tool){
+		switch(tool){
+		case .Circle:
+			dragHandler = CreateCircle(self)
+			break
+		case .Rectangle:
+			dragHandler = CreateRectangle(self)
+			break
+		}
+	}
 }
