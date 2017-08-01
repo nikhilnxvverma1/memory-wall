@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 class CreateRectangle: Command,PressDragReleaseProcessor {
 	
@@ -32,15 +33,15 @@ class CreateRectangle: Command,PressDragReleaseProcessor {
 		
 	}
 	
-	func mousePressed(){
+	func mousePressed(with event:NSEvent){
 		
 	}
 	
-	func mouseDragged(){
+	func mouseDragged(with event:NSEvent){
 		
 	}
 	
-	func mouseReleased(){
+	func mouseReleased(with event:NSEvent){
 		
 	}
 	

@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import Cocoa
 
 
 protocol PressDragReleaseProcessor {
-	func mousePressed()
-	func mouseDragged()
-	func mouseReleased()
+	func mousePressed(with mouseEvent:NSEvent)
+	func mouseDragged(with mouseEvent:NSEvent)
+	func mouseReleased(with mouseEvent:NSEvent)
 }
