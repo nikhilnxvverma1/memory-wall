@@ -14,7 +14,7 @@ class Workspace: NSObject {
     var future:[Command]
     var selectedWall:Wall!
     var wallList:[Wall]=[]
-	var dragHandler:PressDragReleaseProcessor;
+	var dragHandler:PressDragReleaseProcessor?;
     
     private var _managedObjectContext:NSManagedObjectContext!
     var managedObjectContext:NSManagedObjectContext{

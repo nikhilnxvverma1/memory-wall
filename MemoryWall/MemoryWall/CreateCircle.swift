@@ -13,7 +13,7 @@ class CreateCircle: Command,PressDragReleaseProcessor {
 	
 	private var workspace:Workspace
 	
-	init(workspace:Workspace){
+	init(_ workspace:Workspace){
 		self.workspace=workspace;
 	}
 	
