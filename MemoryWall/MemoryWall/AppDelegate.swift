@@ -11,20 +11,15 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    private var statusItem:NSStatusItem;
-    private var entryPanelController:EntryPanelController;
     private var workspaceController:WorkspaceController!
 
     override init() {
-        self.statusItem=NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength);
-        self.entryPanelController=EntryPanelController();
+		
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        
-        statusItem.title="Memory";
-        statusItem.menu=self.entryPanelController.entryMenu;
+		
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -45,7 +40,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func ensureWorkspaceSetup(){
         //inject the workspace in the entry panel
         workspaceController=NSApplication.shared().mainWindow?.windowController?.contentViewController as? WorkspaceController
-        entryPanelController.workspace=workspaceController?.workspace
     }
 }
 
