@@ -670,6 +670,19 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="1280" height="760"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="A6EADC6A-4ECD-4271-A556-789E5ED93FD6" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="RqU-HX-NNq">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="lMr-z1-jed"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="DNf-X3-BnI"/>
+                                <toolbarItem implicitItemIdentifier="9A7F4442-E191-49D7-ADB4-6E2310BC7042" label="Circle" paletteLabel="Circle" tag="-1" image="NSAdvanced" id="FuM-pv-lbH"/>
+                                <toolbarItem implicitItemIdentifier="1376052A-5B69-4B8A-A946-18244AD0464E" label="Rectangle" paletteLabel="Rectangle" tag="-1" image="NSComputer" id="A3I-pi-ylM"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="DNf-X3-BnI"/>
+                                <toolbarItem reference="FuM-pv-lbH"/>
+                                <toolbarItem reference="A3I-pi-ylM"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
                         <segue destination="5gI-5U-AMq" kind="relationship" relationship="window.shadowedContentViewController" id="nsd-lR-9xd"/>
@@ -677,7 +690,7 @@
                 </windowController>
                 <customObject id="6f7-a7-6o1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-20" y="295"/>
         </scene>
         <!--Workspace Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -933,4 +946,8 @@
             <point key="canvasLocation" x="458" y="2050"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSAdvanced" width="32" height="32"/>
+        <image name="NSComputer" width="32" height="32"/>
+    </resources>
 </document>

@@ -16,9 +16,6 @@ class WallArtController: NSViewController {
         super.viewDidLoad()
 		
         // Do view setup here.
-		
-		let wallArtView = self.view as? WallArtView
-		wallArtView?.workspace=container.workspace
     }
     
 	func receiveWorkspaceController(_ controller:WorkspaceController){
