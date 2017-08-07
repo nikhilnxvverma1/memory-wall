@@ -701,41 +701,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="QPU-6w-jI8" userLabel="Wall list">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="710"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="760"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="az8-WT-cCy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="rgF-gl-x3e"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="G6V-6p-9lc" kind="embed" id="et8-4Q-plD"/>
                                 </connections>
                             </containerView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="D35-BX-tSh" userLabel="Wall art">
-                                <rect key="frame" x="300" y="0.0" width="980" height="710"/>
+                                <rect key="frame" x="300" y="0.0" width="980" height="760"/>
                                 <connections>
                                     <segue destination="APs-1n-TMc" kind="embed" id="oCz-aj-FnH"/>
                                 </connections>
                             </containerView>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="r6w-E7-kBy" userLabel="Wall operation">
-                                <rect key="frame" x="0.0" y="710" width="1280" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bZ8-dY-EMo"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="BEg-Yd-Mj1" kind="embed" id="SbC-0c-BE4"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="D35-BX-tSh" firstAttribute="top" secondItem="r6w-E7-kBy" secondAttribute="bottom" id="63d-Is-4Y9"/>
-                            <constraint firstItem="r6w-E7-kBy" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="EcR-tw-Yt4"/>
+                            <constraint firstItem="QPU-6w-jI8" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="Es7-aJ-hRZ"/>
                             <constraint firstAttribute="trailing" secondItem="D35-BX-tSh" secondAttribute="trailing" id="FCJ-Fh-fNn"/>
-                            <constraint firstItem="r6w-E7-kBy" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="YMm-Rt-b7i"/>
-                            <constraint firstItem="QPU-6w-jI8" firstAttribute="top" secondItem="r6w-E7-kBy" secondAttribute="bottom" id="b8Z-XA-k0O"/>
+                            <constraint firstItem="QPU-6w-jI8" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="Vcy-Ws-1HO"/>
                             <constraint firstAttribute="bottom" secondItem="QPU-6w-jI8" secondAttribute="bottom" id="dIO-MR-WCe"/>
                             <constraint firstAttribute="bottom" secondItem="D35-BX-tSh" secondAttribute="bottom" id="ssa-Gq-EUx"/>
-                            <constraint firstAttribute="trailing" secondItem="r6w-E7-kBy" secondAttribute="trailing" id="uG3-x3-OTt"/>
                             <constraint firstItem="D35-BX-tSh" firstAttribute="leading" secondItem="QPU-6w-jI8" secondAttribute="trailing" id="vqs-tW-jkg"/>
-                            <constraint firstItem="QPU-6w-jI8" firstAttribute="leading" secondItem="r6w-E7-kBy" secondAttribute="leading" id="wFQ-5n-520"/>
+                            <constraint firstItem="D35-BX-tSh" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="xiZ-Ao-fqz"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -858,79 +847,6 @@
                 <customObject id="IkR-22-qNx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-452" y="2220"/>
-        </scene>
-        <!--Wall Operation Controller-->
-        <scene sceneID="7EC-RL-LZr">
-            <objects>
-                <viewController id="BEg-Yd-Mj1" customClass="WallOperationController" customModule="MemoryWall" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="Lh7-hj-78e">
-                        <rect key="frame" x="0.0" y="0.0" width="880" height="50"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="lYF-4R-e44" customClass="MyBgView" customModule="MemoryWall" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="880" height="50"/>
-                                <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g9C-SK-uSL">
-                                        <rect key="frame" x="708" y="7" width="154" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Apply as wallpaper" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="9b5-TZ-cBa">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="chu-tW-Ecz">
-                                        <rect key="frame" x="14" y="7" width="80" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t4R-Gf-onN">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="deleteWall:" target="BEg-Yd-Mj1" id="kM0-1S-M0Q"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CVR-Tf-DTQ">
-                                        <rect key="frame" x="607" y="5" width="101" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Rectangle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F26-so-A98">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="rectanglePressed:" target="BEg-Yd-Mj1" id="uZY-FJ-Iek"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jR0-pP-Hr6">
-                                        <rect key="frame" x="519" y="7" width="75" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" title="Circle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jVg-Wz-Cq1">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="circlePressed:" target="BEg-Yd-Mj1" id="hdN-9j-DcQ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="CVR-Tf-DTQ" firstAttribute="centerY" secondItem="lYF-4R-e44" secondAttribute="centerY" id="6dL-Xw-0zj"/>
-                                    <constraint firstAttribute="trailing" secondItem="g9C-SK-uSL" secondAttribute="trailing" constant="24" id="9aE-kP-Y3z"/>
-                                    <constraint firstItem="chu-tW-Ecz" firstAttribute="centerY" secondItem="lYF-4R-e44" secondAttribute="centerY" id="OH3-f6-p3Z"/>
-                                    <constraint firstItem="chu-tW-Ecz" firstAttribute="leading" secondItem="lYF-4R-e44" secondAttribute="leading" constant="20" id="RSE-wq-PBw"/>
-                                    <constraint firstItem="g9C-SK-uSL" firstAttribute="leading" secondItem="CVR-Tf-DTQ" secondAttribute="trailing" constant="12" id="dbK-Be-TZb"/>
-                                    <constraint firstItem="g9C-SK-uSL" firstAttribute="centerY" secondItem="lYF-4R-e44" secondAttribute="centerY" id="fgb-YK-eja"/>
-                                    <constraint firstAttribute="height" constant="50" id="l3g-vs-3nr"/>
-                                </constraints>
-                            </customView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="lYF-4R-e44" firstAttribute="leading" secondItem="Lh7-hj-78e" secondAttribute="leading" id="3oL-eX-KXC"/>
-                            <constraint firstAttribute="bottom" secondItem="lYF-4R-e44" secondAttribute="bottom" id="9yu-hC-Kd0"/>
-                            <constraint firstItem="lYF-4R-e44" firstAttribute="width" secondItem="Lh7-hj-78e" secondAttribute="width" id="MgB-Am-pvW"/>
-                            <constraint firstAttribute="trailing" secondItem="lYF-4R-e44" secondAttribute="trailing" id="gEM-Va-zzk"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="H2G-0a-c4J" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1304" y="1286"/>
         </scene>
         <!--Wall Art Controller-->
         <scene sceneID="JbJ-bb-pyO">
