@@ -34,7 +34,7 @@ class CreateRectangle: Command,PressDragReleaseProcessor {
 	}
 	
 	func mousePressed(with event:NSEvent){
-		
+		//TODO create a CGRect 
 	}
 	
 	func mouseDragged(with event:NSEvent){

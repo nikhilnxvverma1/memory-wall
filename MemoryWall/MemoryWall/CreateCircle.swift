@@ -34,7 +34,7 @@ class CreateCircle: Command,PressDragReleaseProcessor {
 	}
 	
 	func mousePressed(with event:NSEvent){
-		
+		//TODO create a CGCircle
 	}
 	
 	func mouseDragged(with event:NSEvent){
