@@ -9,7 +9,7 @@
 import Cocoa
 
 class Workspace: NSObject {
-    var renderer:RenderingStrategy
+
     var history:[Command]
     var future:[Command]
     var selectedWall:Wall!
@@ -29,7 +29,6 @@ class Workspace: NSObject {
     }
     
     override init(){
-        renderer=DumbRenderingStrategy()
         history=[Command]()
         future=[Command]()
     }
