@@ -23,4 +23,16 @@ class WallArtController: NSViewController {
 		container.wallArtController=self
 	}
 	
+	override func mouseUp(with event: NSEvent) {
+		print("Mouse Up")
+	}
+	
+	override func mouseDragged(with event: NSEvent) {
+		print("Mouse dragged")
+	}
+	
+	override func mouseDown(with event: NSEvent) {
+		print("Mouse down")
+	}
+	
 }
